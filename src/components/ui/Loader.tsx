@@ -51,11 +51,17 @@ export default function Loader({ onComplete }: { onComplete: () => void }) {
   return (
     <AnimatePresence>
       <motion.div
+       style={{
+        backgroundImage: "url('/images/curve.svg')",
+        backgroundRepeat: 'no-repeat',
+        backgroundPosition: 'center top',
+        backgroundSize: 'cover',
+      }}
         key="loader"
         initial={{ opacity: 1 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        className="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-white"
+        className="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-gradient-to-b from-green-100 to-white overflow-hidden"
       >
         {/* Logo with ringing phone */}
         <motion.div layoutId="logo" className="flex items-center gap-4 mb-8">
